@@ -29,7 +29,7 @@ model Order {
   orderType  type
   makerFills Fills[]       @relation("maker_order")
   takerFills Fills[]       @relation("taker_order")
-  status     Status     @default("open")
+  status     Status     @default(Open)
   createdAt  DateTime @default(now())
   UpdatedAt  DateTime @updatedAt()
   user       User     @relation(fields: [userId], references: [id])

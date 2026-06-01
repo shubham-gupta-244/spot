@@ -6,8 +6,9 @@ import { prisma } from "@repo/db"
 
 const requestBody =  z.object({
   username: z.string(),
-  passowrd : z.string()
+  password : z.string()
 })
+
 export const signupcontroller = async (req: Request, res: Response,next:NextFunction):Promise<void> => {
   const validrequest = requestBody.safeParse(req.body)
   if (!validrequest.success) {
